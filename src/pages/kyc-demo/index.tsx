@@ -11,6 +11,7 @@ import {
   Button,
   Input,
   Select,
+
   FormControl,
   FormLabel,
   Grid,
@@ -236,7 +237,7 @@ const KYCDemoPage: React.FC = () => {
     <Box bg="white" minH="100vh">
       <HushhTechHeader />
       
-      <Container maxW="7xl" pb="60px">
+      <Container maxW="7xl" px={{base :4, md: 8, lg: 12}} pb="60px">
         {/* Header */}
         <VStack spacing={4} mb={12} textAlign="center">
           <Badge 
@@ -263,7 +264,8 @@ const KYCDemoPage: React.FC = () => {
           </Text>
         </VStack>
 
-        <Grid templateColumns={{ base: '1fr', lg: '1fr 1fr' }} gap={8}>
+        <Grid templateColumns={{ base: '1fr', md: '1fr', lg: '1fr 1fr' }} gap={{ base: 4, md: 6, lg: 8 }}
+>
           {/* Left Column - Controls & Agent Collab */}
           <GridItem>
             <VStack spacing={6} align="stretch">
@@ -288,12 +290,12 @@ const KYCDemoPage: React.FC = () => {
                   Demo Controls
                 </Text>
 
-                <VStack spacing={4} align="stretch">
+                <VStack spacing={{ base: 3, md: 4, lg: 5 }} align="stretch">
                   <FormControl>
                     <FormLabel fontSize="xs" color="gray.500">
                       Select Bank/Fintech
                     </FormLabel>
-                    <Select
+                    <Select w="full" 
                       value={selectedBank}
                       onChange={(e) => setSelectedBank(e.target.value)}
                       bg="gray.50"
@@ -315,7 +317,7 @@ const KYCDemoPage: React.FC = () => {
                     <FormLabel fontSize="xs" color="gray.500">
                       User Email (for lookup)
                     </FormLabel>
-                    <Input
+                    <Input w="full"
                       value={userEmail}
                       onChange={(e) => setUserEmail(e.target.value)}
                       placeholder="e.g., verified@example.com"
@@ -335,7 +337,7 @@ const KYCDemoPage: React.FC = () => {
                     <FormLabel fontSize="xs" color="gray.500">
                       Consent Token (optional)
                     </FormLabel>
-                    <Input
+                    <Input w="full"
                       value={consentToken}
                       onChange={(e) => setConsentToken(e.target.value)}
                       placeholder="User consent token"
@@ -348,7 +350,7 @@ const KYCDemoPage: React.FC = () => {
                     />
                   </FormControl>
 
-                  <HStack spacing={3} pt={2}>
+                  <Flex direction={{ base: 'column', sm: 'row' }} gap={3} pt={2}>
                     <Button
                       flex="1"
                       bg="black"
@@ -371,7 +373,7 @@ const KYCDemoPage: React.FC = () => {
                     >
                       Reset
                     </Button>
-                  </HStack>
+                  </Flex>
                 </VStack>
               </Box>
 

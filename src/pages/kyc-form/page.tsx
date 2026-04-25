@@ -1773,7 +1773,7 @@ const KYCFormPage = () => {
         borderRadius="lg" 
         overflow="hidden" 
         borderColor={useColorModeValue("gray.200", "gray.700")}
-        p={6} 
+        p={{ base: 4, md: 6, lg: 8 }} 
         bg={useColorModeValue("white", "gray.800")}
         mb={8}
       >
